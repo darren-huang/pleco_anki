@@ -15,9 +15,71 @@ else mouse_pos_s := []
 ; Variable for the different position names
 pos_names := ["Menu", "Settings", "Flashcards", "Default_Tags", "Available_Tags"]
 
-; SetTag(tag) {
 
-; }
+SetTag(tag) {
+    global mouse_pos_s
+    wait_time := 750
+    scroll_wait := 300
+    key_press_delay := 100
+    key_hold := 50
+
+    MouseMove, mouse_pos_s[1][1], mouse_pos_s[1][2] ; menu pos
+    MouseClick, Left ; menu click
+    sleep, wait_time
+
+    MouseMove, mouse_pos_s[2][1], mouse_pos_s[2][2] ; setting pos
+
+    Loop, 5 { ; scroll up menu
+        MouseClick, WheelUp
+        Sleep, scroll_wait
+    }
+    Sleep, wait_time
+
+    MouseClick, Left ; settings click
+    sleep, wait_time
+
+    Loop, 10 { ; scroll down settings
+        MouseClick, WheelDown
+        Sleep, scroll_wait
+    }
+    Sleep, wait_time
+
+    MouseMove, mouse_pos_s[3][1], mouse_pos_s[3][2] ; flashcard pos
+    MouseClick, Left ; flashcard click
+    Sleep, wait_time
+
+    Loop, 10 { ; scroll down settings
+        MouseClick, WheelDown
+        Sleep, scroll_wait
+    }
+    Sleep, wait_time
+
+    MouseMove, mouse_pos_s[4][1], mouse_pos_s[4][2] ; default tag pos
+    MouseClick, Left
+    Sleep, wait_time
+
+    SetKeyDelay, key_press_delay, key_hold
+    SendEvent {Down}{Enter}{Down}{Right}{Enter}
+    Sleep, wait_time
+
+    MouseMove, mouse_pos_s[5][1], mouse_pos_s[5][2] ; available tag pos
+    MouseClick, Left
+    Sleep, wait_time
+
+    SendEvent ^a ; ctrl A
+    Sleep, wait_time
+    Send % tag ; enter tag 
+    Sleep, wait_time
+    SendEvent {Down}{Right}{Enter} ; select
+    Sleep, % wait_time
+
+    MouseMove, mouse_pos_s[4][1], mouse_pos_s[4][2] ; default tag pos
+    Sleep, wait_time
+    MouseClick, Left
+    Sleep, wait_time
+
+    SendEvent {Down}{Enter}{Down}{Right}{Enter}{Esc}{Esc}
+}
 
 SaveMousePos(pos_int) {
     global mouse_pos_s, pos_names
@@ -47,6 +109,22 @@ return
 
 LoadMousePosLabel:
 LoadMousePos(SubStr(A_ThisHotkey, 2))
+return
+
+F1::
+SetTag("test_f1 fake-tag")
+return
+
+F2::
+Send % "test_f1 fake-tag"
+return
+
+F3::
+Send % "test_f1"
+return
+
+F4::
+Send % "test"
 return
 
 ^`::
