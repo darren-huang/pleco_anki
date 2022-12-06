@@ -116,7 +116,7 @@ SetTag("test_f1 fake-tag")
 return
 
 F2::
-Send % "test_f1 fake-tag"
+SendRaw, "爱好"
 return
 
 F3::
