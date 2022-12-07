@@ -13,7 +13,7 @@ if FileExist(mouse_pos_file_path) {
 else mouse_pos_s := []
 
 ; Variable for the different position names
-pos_names := ["Menu", "Settings", "Flashcards", "Default_Tags", "Available_Tags"]
+pos_names := ["Menu", "Settings", "Flashcards", "Default_Tags", "Available_Tags", "Clear_Search_Bar", "Add_Flashcard"]
 
 
 SetTag(tag) {
@@ -81,6 +81,25 @@ SetTag(tag) {
     SendEvent {Down}{Enter}{Down}{Right}{Enter}{Esc}{Esc}
 }
 
+CreateFlashcard(word){
+    global mouse_pos_s
+
+    loop, 2 {
+        MouseMove, mouse_pos_s[6][1], mouse_pos_s[6][2] ; clear search bar
+        MouseClick, Left
+        Sleep, 250
+    }
+    Sleep, 500
+
+    Send % "{Raw}" word
+    Sleep, 750
+
+    MouseMove, mouse_pos_s[7][1], mouse_pos_s[7][2] ; clear search bar
+    MouseClick, Left
+    Sleep, 750
+
+}
+
 SaveMousePos(pos_int) {
     global mouse_pos_s, pos_names
     MouseGetPos, xpos, ypos
@@ -116,15 +135,16 @@ SetTag("test_f1 fake-tag")
 return
 
 F2::
-SendRaw, "爱好"
+SendRaw % "爱好"
 return
 
 F3::
-Send % "test_f1"
+Send % "{Raw}枢纽"
 return
 
 F4::
-Send % "test"
+word := "枢纽枢纽枢纽枢纽枢纽"
+CreateFlashcard(word)
 return
 
 ^`::
