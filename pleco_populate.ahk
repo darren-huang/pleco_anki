@@ -12,6 +12,10 @@ if FileExist(mouse_pos_file_path) {
 }
 else mouse_pos_s := []
 
+; file for wordlist
+; wordlist_txt := FileOpen("formatted_wordlist.txt", "r", "UTF-8")
+wordlist_txt := "formatted_wordlist_4.txt"
+
 ; Variable for the different position names
 pos_names := ["Menu", "Settings", "Flashcards", "Default_Tags", "Available_Tags", "Clear_Search_Bar", "Add_Flashcard"]
 
@@ -84,17 +88,18 @@ SetTag(tag) {
 CreateFlashcard(word){
     global mouse_pos_s
 
-    loop, 2 {
-        MouseMove, mouse_pos_s[6][1], mouse_pos_s[6][2] ; clear search bar
-        MouseClick, Left
-        Sleep, 250
-    }
-    Sleep, 500
+    MouseMove, mouse_pos_s[6][1], mouse_pos_s[6][2] ; clear search bar
+    MouseClick, Left
+    Sleep, 750
 
     Send % "{Raw}" word
     Sleep, 750
 
-    MouseMove, mouse_pos_s[7][1], mouse_pos_s[7][2] ; clear search bar
+    MouseMove, mouse_pos_s[7][1], mouse_pos_s[7][2] ; add flashcard
+    MouseClick, Left
+    Sleep, 750
+
+    MouseMove, mouse_pos_s[8][1], mouse_pos_s[8][2] ; close menu if necessary
     MouseClick, Left
     Sleep, 750
 
@@ -135,7 +140,15 @@ SetTag("test_f1 fake-tag")
 return
 
 F2::
-SendRaw % "爱好"
+FileEncoding, UTF-8
+Loop, read, % wordlist_txt 
+{
+    if InStr(A_LoopReadLine, "hsk_level") {
+        SetTag(A_LoopReadLine)
+    } else {
+        CreateFlashcard(A_LoopReadLine)
+    }
+}
 return
 
 F3::
