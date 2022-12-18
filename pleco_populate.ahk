@@ -14,7 +14,7 @@ else mouse_pos_s := []
 
 ; file for wordlist
 ; wordlist_txt := FileOpen("formatted_wordlist.txt", "r", "UTF-8")
-wordlist_txt := "formatted_wordlist_4.txt"
+wordlist_txt := "backfill_todo_wordlist_file.txt"
 
 ; Variable for the different position names
 pos_names := ["Menu", "Settings", "Flashcards", "Default_Tags", "Available_Tags", "Clear_Search_Bar", "Add_Flashcard"]
