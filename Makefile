@@ -5,15 +5,17 @@ SOURCE_CMD := . $(VENV_PATH)/bin/activate;
 
 .PHONY: setup-pip-tools hello source update-requirements
 
-setup-pip-tools: source
-	$(PYTHON_CMD) -m pip install --upgrade pip pip-tools
+_create-venv:
+	$(PYTHON_CMD) -m venv .venv
 
-hello:
-	echo "Hello World!"
-
-source:
+_source:
 	$(SOURCE_CMD)
 
-update-requirements: source setup-pip-tools
-	$(PYTHON_CMD) -m piptools compile --resolver=backtracking requirements.in
+setup-pip-tools: _source
+	$(PYTHON_CMD) -m pip install --upgrade pip pip-tools
 
+update-requirements: _source setup-pip-tools
+	$(PYTHON_CMD) -m piptools compile --resolver=backtracking requirements.in
+	$(PYTHON_CMD) -m pip install -r requirements.txt
+
+create-venv: _create-venv _source setup-pip-tools update-requirements
