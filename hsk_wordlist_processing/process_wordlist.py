@@ -1,15 +1,16 @@
 tag_search = "级词汇表"
-wordlist_file = open("wordlist.txt", "r", encoding="utf-8")
+wordlist_file = open("original_hsk_wordlist.txt", "r", encoding="utf-8")
 write_file = open("formatted_wordlist.txt", "w", encoding="utf-8")
 
 tags = [1, 2, 3, 4, 5, 6, "7-9"]
 tag_index = 0
 
+
 def process_char(string, char):
     if char in string:
-        return string[:string.find(char)]
+        return string[: string.find(char)]
     return string
-    
+
 
 for line in wordlist_file:
     line = line.strip()
@@ -24,5 +25,3 @@ for line in wordlist_file:
             line = process_char(line, "（")
             line = line.strip().split()[1]
             write_file.write(line + "\n")
-
-
