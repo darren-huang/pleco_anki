@@ -26,7 +26,7 @@ And voila, now you have a beautiful working, Anki Deck of HSK 3.0 words with Ple
 
 ## Using Anki and the Generated Deck
 
-1. Get the latest Apkg file from [this repo's Releases section](https://github.com/darren-huang/pleco_anki_autohotkey/releases)
+1. Get the latest Apkg file from [this repo's Releases section](https://github.com/darren-huang/pleco_anki/releases)
 1. Make an [AnkiWeb account](https://ankiweb.net) and get either the [Desktop Anki Client](https://apps.ankiweb.net/) and maybe the apps for Android or IOS (note: the official app for IOS not free (far from free its 24.99) but I think free versions are available, you should google it). You'll want the desktop client for sure to setup your decks
 1. From the desktop app use the **\[Import Files\]** button to import the Apkg file
 1. You should now have all the decks imported, but you'll want to change 1 setting before you get started doing flashcards
