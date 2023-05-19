@@ -2,6 +2,8 @@
 
 Hello! This is a project for specifically learning Chinese Vocabulary via [Pleco](https://www.pleco.com/) and [Anki](https://apps.ankiweb.net/)!
 
+[Skip to Download & Setup](#using-anki-and-the-generated-deck)
+
 ## Intro to Pleco and Anki & Motivations for this Project
 
 For some quick background, Pleco is a widely used Chinese-English dictionary app that is very popular and contains a lot of useful tooling and resources for looking up English translations of Chinese words and phrases. One thing that Pleco does really well, is that there are a large variety of example sentences for most word definitions, giving good context into how a word should be used. (sometimes the examples are a pain to understand but usually they are pretty good)
@@ -24,4 +26,40 @@ And voila, now you have a beautiful working, Anki Deck of HSK 3.0 words with Ple
 
 ## Using Anki and the Generated Deck
 
-Get the l
+1. Get the latest Apkg file from [this repo's Releases section](https://github.com/darren-huang/pleco_anki_autohotkey/releases)
+1. Make an [AnkiWeb account](https://ankiweb.net) and get either the [Desktop Anki Client](https://apps.ankiweb.net/) and maybe the apps for Android or IOS (note: the official app for IOS not free (far from free its 24.99) but I think free versions are available, you should google it). You'll want the desktop client for sure to setup your decks
+1. From the desktop app use the **\[Import Files\]** button to import the Apkg file
+1. You should now have all the decks imported, but you'll want to change 1 setting before you get started doing flashcards
+    1. If you click the \[HSK 3.0 (Pleco Definitions)\] deck it will show you all the subdecks:
+
+        ![anki image 1](images/anki1.png)
+
+        There a subdecks for learning to read (shows a word, back has pinyin + definition) and for writing 
+        (shows definition with word missing, back has definition with the word). And also corresponding simplified
+        and traditional versions. If you don't want the simplified or traditional versions, you can click the gear
+        icon and select 'Delete' for that subdeck.
+
+    1. Click on the gear icon next to the \[HSK 3.0 (Pleco Definitions)\] and select 'Options'
+
+        ![anki image 2](images/anki2.png)
+
+    1. Then click the drop-down next to the 'Save' button and add a new settings preset 
+
+        ![anki image 3](images/anki3.png)
+
+    1. Name it something like 'Unlimited' and set the 'New cards/day' and 'Maximum review/day' to 9999
+
+        ![anki image 4](images/anki4.png)
+        
+        These setting presets control how many cards you'll get each day as well as adjust the intervals for
+        seeing the card again after getting it right/wrong. You can play with the settings for the individual
+        read/write subdecks, but for the main HSK 3.0 deck the daily limit does some weird stuff so setting
+        the limit to something really high should fix that.
+    
+    1. After you save you should be all good to go!
+
+1. To start studying click on a subdeck (writing or reading) and start learning!
+    1. a setting I would recommend changing is Preferences>Scheduling> change 'Mix new & review' to 'Show new after review'
+    1. if hsk_level_1 etc. cards are too easy, on Anki desktop you can click 'Browse' and filter for hsk_level_1 and delete/suspend those cards
+    1. Anki has cloud support for saving progress, so make sure to sync & login 
+    1. good luck : \)!
