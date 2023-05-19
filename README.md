@@ -63,3 +63,15 @@ And voila, now you have a beautiful working, Anki Deck of HSK 3.0 words with Ple
     1. if hsk_level_1 etc. cards are too easy, on Anki desktop you can click 'Browse' and filter for hsk_level_1 and delete/suspend those cards
     1. Anki has cloud support for saving progress, so make sure to sync & login 
     1. good luck : \)!
+
+## Using the Code
+
+If you want to do anything similar or would like to make your own custom anki collections this is a great place to get started.
+
+### Auto Hot Key
+
+Under the filder `auto_hotkey_scripts` you can find `pleco_populate.ahk` the script defines functions for writing some mouse cursor positions to `mouse_positions.ini` and then clicking in those mouse positions in a very specific order and timing. It also reads text line by line from `backfil_todo_wordlist_file.txt`.
+
+### Python Scripts For Editting Anki APKGs
+
+Anki Apkg's under the hood are just zipped sqlite databases. You can find some pretty up to date sqlite schema for apkgs [here](https://github.com/ankidroid/Anki-Android/wiki/Database-Structure) which is a big help. All the code for processing the chinese words, comparing against the HSK 3.0 wordlist, and editting the Anki Decks is inside `DirectlyEditAnkiDecks.ipynb`. (note if you are trying to edit the decks, don't be fooled by the packages on pypi for anki. They all don't work... They probably worked with older versions of Anki, but no more. Sqlite is the way to go. This will definitely save you many hours and headaches.). 
