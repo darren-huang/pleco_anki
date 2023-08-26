@@ -33,6 +33,9 @@ And voila, now you have a beautiful working, Anki Deck of HSK 3.0 words with Ple
     1. Click a deck to practice writing/reading & select "again" if you got it wrong, and "hard/good/easy" if you got it correct. Anki will naturally resurface old cards based on how well you did on them and when you last saw them. Doing the cards daily makes best use of [Anki's spaced reptition learning](https://docs.ankiweb.net/background.html#spaced-repetition). Good luck!
 
 ## Extra: Editting Some Settings
+- Remove Easy Cards (if you already know a good number of words/characters)
+    1. if hsk_level_1 etc. cards are too easy, on Anki desktop you can click 'Browse' and filter for hsk_level_1 and delete/suspend those cards
+
 - Editting How Many New Cards Per Day:
 
     By default Anki sets each deck to max 20 new cards a day. A slightly annoying piece is that since all 4 sub-decks (reading/writing) are put under 1 main deck called "HSK 3.0 (Pleco Definitions)", the 20 limit for the main deck messes with the limits for all the sub-decks. I like to fix this by setting the new card limit of the main deck to 9999 (essentially unlimited). The following steps are for how to do that, but you can do something similar to change the new card limits for any of the subdecks:
@@ -69,9 +72,6 @@ And voila, now you have a beautiful working, Anki Deck of HSK 3.0 words with Ple
 
   By defualt Anki will mix old cards you're reviewing with new cards to learn. I usually don't like this since new cards take a long time, and I feel like its more important to finish reviewing old cards first before moving onto something new. To change this:
     1. a setting I would recommend changing is Preferences>Scheduling> change 'Mix new & review' to 'Show new after review'
-
-- Remove Easy Cards (if you already know a good number of words)
-    1. if hsk_level_1 etc. cards are too easy, on Anki desktop you can click 'Browse' and filter for hsk_level_1 and delete/suspend those cards
 
 ## Using the Code
 
