@@ -30,7 +30,7 @@ And voila, now you have a beautiful working, Anki Deck of HSK 3.0 words with Ple
 1. Make an [AnkiWeb account](https://ankiweb.net) and get either the [Desktop Anki Client](https://apps.ankiweb.net/) and maybe the apps for Android or IOS (note: the official app for IOS not free (far from free its 24.99) but I think free versions are available, you should google it). You'll want the desktop client for sure to setup your decks
 1. From the desktop app use the **\[Import Files\]** button to import the Apkg file
 1. You're now good to go!
-    1. Click a deck to practice writing/reading & select "again" if you got it wrong, and "hard/good/easy" if you got it correct. Anki will naturally resurface old cards based on how well you did on them and when you last saw them. Doing the cards daily makes best use of [Anki's spaced reptition learning](https://docs.ankiweb.net/background.html#spaced-repetition). Good luck!
+    1. Click a deck to practice writing/reading & select "again" if you got it wrong, and "hard/good/easy" if you got it correct. If the cards are too easy, you can delete the level 1, 2, 3 etc. cards until you see words you don't know (See [the extra Settings Sections for how to remove easy cards](#extra-editting-some-settings)). Anki will naturally resurface old cards based on how well you did on them and when you last saw them. Doing the cards daily makes best use of [Anki's spaced reptition learning](https://docs.ankiweb.net/background.html#spaced-repetition). Good luck!
 
 ## Extra: Editting Some Settings
 - Remove Easy Cards (if you already know a good number of words/characters)
